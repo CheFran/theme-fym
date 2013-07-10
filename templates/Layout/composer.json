@@ -1,0 +1,30 @@
+{
+	"name": "silverstripe/installer",
+	"description": "The SilverStripe Framework Installer",
+	"require": {
+		"php": ">=5.3.2",
+		"silverstripe/cms": "3.1.x-dev",
+		"silverstripe/framework": "3.1.x-dev",
+		"silverstripe-themes/simple": "*",
+		"silverstripe/translatable": "dev-master",
+		"silverstripe-labs/googleanalytics": "dev-master",
+		"silverstripe/blog": "dev-master",
+		"rywa/silverstripe-foundation-blog": "dev-master",
+		"rywa/silverstripe-foundation-forms": "dev-master",
+		"rywa/silverstripe-foundation": "dev-master",
+		"silverstripe/googlesitemaps": "dev-master",
+		"silverstripe/userforms": "dev-master",
+		"wilr/silverstripe-facebookconnect": "dev-master",
+		"richardsjoqvist/silverstripe-news": "dev-master"
+	},
+	"require-dev": {
+		"silverstripe/docsviewer": "*",
+		"silverstripe/behat-extension": "*",
+		"silverstripe/buildtools": "*",
+		"phpunit/phpunit": "3.7.*"
+	},
+	"config": {
+		"process-timeout": 600	
+	},
+	"minimum-stability": "dev"
+}

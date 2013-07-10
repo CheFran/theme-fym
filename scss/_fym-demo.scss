@@ -1,0 +1,482 @@
+
+ /*------------------
+  Variables 
+------------------*/
+$body-bg: #fff;
+$body-font-color: #999;
+$body-font-family: "caviar_dreamsbold", "Helvetica", Helvetica, Arial, sans-serif;
+
+ /*------------------
+  Top Bar Changes
+------------------*/
+$topbar-height : 45px;  
+$topbar-bg: #111 !default;
+$dev-stage-color: rgba(220,20,60,0.45);
+.top-bar {
+    overflow: hidden;
+    height: $topbar-height;
+    line-height: $topbar-height;
+    position: relative;
+    background: $topbar-bg;
+    }
+
+.top-bar { border-bottom: 2px solid #2DAEBF;}
+.top-bar { margin-bottom: 0px !important; }
+.top-bar li.name { padding-top: 9px; padding-left: 10px; }
+.top-bar li.name { font-size: 18px; }
+.top-bar li.name span a.toggle-nav { display: block; width: 16px; height: 16px; background: url('../images/plus-toggle-2.png') 0 0 no-repeat; position: absolute; left: 145px; top: 15px; opacity: 0.4; z-index: 1; -webkit-transition: all 500ms ease-in-out; -moz-transition: all 500ms ease-in-out; -o-transition: all 500ms ease-in-out; -ms-transition: all 500ms ease-in-out; }
+.top-bar li.name span a.toggle-nav.open { -moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); -o-transform: rotate(135deg); -ms-transform: rotate(135deg); transform: rotate(135deg); opacity: 0.8; z-index: 1; -moz-transform-origin: center center; }
+.top-bar .toggle-topbar.menu-icon > a {
+text-indent: -48px;
+width: 34px;
+height: 34px;
+line-height: 33px;
+padding: 0;
+color: $primary-color;
+}
+.top-bar .toggle-topbar a {
+text-transform: uppercase;
+font-size: 0.8125em;
+font-weight: normal;
+position: relative;
+display: block;
+color: $primary-color;
+}
+
+.top-bar-nav-color {
+    color: rgba($primary-color, .75);
+}
+
+.top-bar-section ul li > a:hover, .top-bar-section ul li.link > a:hover {
+    color: rgba($primary-color, .75);
+    text-shadow: 0 0 30px yellow , 0 0 70px yellow;
+}
+
+.top-bar-section ul li.link > a {
+    color: rgba($primary-color, .55);
+}
+.top-bar-section ul li.active > a {
+    color: rgba($primary-color, .75);
+    text-shadow: 0 0 20px yellow , 0 0 70px yellow; 
+}
+.top-bar ul.left, .top-bar ul.right { background: $topbar-bg; }
+.top-bar ul.left { margin-left: 30px;}
+
+.top-bar li.dev-stage a { color: $dev-stage-color; background: $topbar-bg; font-size: 15px; padding-top: 2px; }
+
+.has-switch { padding: 10px;}
+
+$color-switch-nolang-bg: #9F0000;
+$positive-color: #1156A8;
+$negative-color: #9F0000;
+    
+.switch-lang {
+    
+    $switch-paddle-bg: #1156A8;
+    $switch-bg: #1156A8;
+    @include switch($transition-speed:$switch-paddle-transition-speed, $transition-ease:$switch-paddle-transition-ease, $height:$switch-height-tny, $font-size:$switch-font-size-tny, $line-height:2.3em, $paddle-bg:$switch-paddle-bg, $positive-color:$switch-positive-color, $negative-color:$switch-negative-color, $radius:true, $base-style:true);
+    // Tiny radio switches
+      &.tiny { @include switch-size(23px, $switch-font-size-tny, 1.9em); }
+      
+
+      // Add a radius to the switch
+      &.radius { @include radius(4px);
+        & > span { @include radius(3px); }
+      }
+
+      // Make the switch completely round, like a pill
+      &.round { @include radius(1000px);
+        & > span { @include radius(999px); }
+        label { padding: 0 emCalc($switch-label-side-padding + 3px); }
+      }
+    
+    border-color: $primary-color;
+    color: #fff;
+    font-family: "Helvetica", Helvetica, Arial, sans-serif;
+    background: $topbar-bg;
+}
+.switch-nolang { 
+    
+    $switch-bg: #9F0000;
+    $switch-paddle-bg: #9F0000;
+    @include switch($transition-speed:$switch-paddle-transition-speed, $transition-ease:$switch-paddle-transition-ease, $height:$switch-height-tny, $font-size:$switch-font-size-tny, $line-height:2.3em, $paddle-bg:$switch-paddle-bg, $positive-color:$switch-positive-color, $negative-color:$switch-negative-color, $radius:true, $base-style:true);
+    // Tiny radio switches
+      &.tiny { @include switch-size(23px, $switch-font-size-tny, 1.9em); }
+      
+
+      // Add a radius to the switch
+      &.radius { @include radius(4px);
+        & > span { @include radius(3px); }
+      }
+
+      // Make the switch completely round, like a pill
+      &.round { @include radius(1000px);
+        & > span { @include radius(999px); }
+        label { padding: 0 emCalc($switch-label-side-padding + 3px); }
+      }
+    color: #1156A8;
+    font-family: "Helvetica", Helvetica, Arial, sans-serif;
+    background: $topbar-bg;
+}
+
+ .switch-lang label {
+    padding: 0 0.375em;
+    line-height: 2em;
+    font-size: 0.6875em;
+    padding-right: 4px;
+    padding-left: 4px;
+    color: $primary-color;
+    width: 21px;
+}
+.switch-nolang label {
+    padding: 0 0.375em;
+    line-height: 2em;
+    font-size: 0.6875em;
+    padding-right: 4px;
+    padding-left: 4px;
+    width: 21px;
+    color: $alert-color;
+    
+}
+/* Toggle for Mega Drop Navigation */
+#megaDrop {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding-top: 35px;
+    padding-bottom: 40px;
+    background: #000;
+    background: rgba(0,0,0,0.85);
+    color: #F3EBE9;
+    margin-top: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.75);
+}
+
+#megaDrop .property a h4 {
+    font-family: caviar_dreamsbold;
+    font-size: 18px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: rgba(207,207,207,0.85);
+}
+
+.home-banner {
+    overflow: visible;
+    background: url(../../../assets/fym/design/home/home-test-banner-01.jpg) no-repeat center center #fff;
+    color: rgba(1,1,1,0.85);
+}
+
+ .int-header {
+     background: #fff;
+    padding-top: 10px;
+     color: #898989;
+ }
+
+ hr.dotted {
+    border-color: rgb(221, 221, 221);
+    border-color: rgba(221, 221, 221,0.70);
+    border-style: dashed;
+}
+hr {
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-width: 1px 0px 0px;
+    clear: both;
+    margin: 1.25em 0px 1.1875em;
+    height: 0px;
+}
+.large-centered {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+}
+.large-10 {
+    width: 83.3333%;
+}
+h2.smaller {
+    font-size: 3em;
+    margin-bottom: 0px;
+}
+.light {
+    font-weight: 200 !important;
+}
+.bump-25 {
+    margin-top: 25px !important;
+}
+.centered-text {
+    text-align: center;
+}
+p.lead {
+    font-size: 1.125em;
+    margin-top: -0.3125em;
+    line-height: 1.3em;
+    color: $topbar-bg;
+    color: rgba(1, 1, 1, .65);
+}
+/*==================================================
+ * Effect 1
+ * ===============================================*/
+.shadow-inset {
+            -moz-box-shadow: inset 0 0 5px 5px rgba(7,7,7,0.2);
+         -webkit-box-shadow: inset 0 0 5px 5px rgba(7,7,7,0.2);
+                 box-shadow: inset 0 0 5px 5px rgba(7,7,7,0.2);
+}
+ .shadow-bottom {
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+$primary-color: #2ba6cb;
+$secondary-color: #e9e9e9;
+$alert-color: #c60f13;
+$success-color: #5da423;
+$body-bg: #f6f6f6;
+$body-font-color: #999;
+$body-font-family: "caviar_dreamsbold", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-weight: normal;
+$body-font-style: normal;
+
+
+// Orbit Changes
+$orbit-container-bg: #f6f6f6;
+$orbit-timer-bg-old: rgb(0,0,0);
+$orbit-timer-bg: rgba(0,0,0,0.01);
+
+$fonticongen-font-color: $primary-color;
+$fontFileName: "../fonts/general_foundicons";
+$fontName: "GeneralFoundicons";
+$classPrefix: "foundicongen-";
+
+@mixin i-class($name,$pua) {
+  .#{$classPrefix}#{$name}:before { 
+    content: "\f#{$pua}";
+  }
+}
+
+@mixin ie-class($name,$pua) {
+  .#{$classPrefix}#{$name} { 
+    *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = "&#xf#{$pua};"); 
+  }
+}
+
+@mixin face {
+  @font-face { 
+    font-family: $fontName;
+    src: url('#{$fontFileName}.eot');
+    src: url('#{$fontFileName}.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontFileName}.woff') format('woff'),
+         url('#{$fontFileName}.ttf') format('truetype'),
+         url('#{$fontFileName}.svg##{$fontName}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+/* font-face */
+@include face;
+
+/* global foundicon styles */
+[class*="#{$classPrefix}"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+  color: $fonticongen-font-color;
+}
+[class*="#{$classPrefix}"]:before {
+  font-family: $fontName;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+/* icons */
+@include i-class(settings,"000");
+@include i-class(heart,"001");
+@include i-class(star,"002");
+@include i-class(plus,"003");
+@include i-class(minus,"004");
+@include i-class(checkmark,"005");
+@include i-class(remove,"006");
+@include i-class(mail,"007");
+@include i-class(calendar,"008");
+@include i-class(page,"009");
+@include i-class(tools,"00a");
+@include i-class(globe,"00b");
+@include i-class(home,"00c");
+@include i-class(quote,"00d");
+@include i-class(people,"00e");
+@include i-class(monitor,"00f");
+@include i-class(laptop,"010");
+@include i-class(phone,"011");
+@include i-class(cloud,"012");
+@include i-class(error,"013");
+@include i-class(right-arrow,"014");
+@include i-class(left-arrow,"015");
+@include i-class(up-arrow,"016");
+@include i-class(down-arrow,"017");
+@include i-class(trash,"018");
+@include i-class(add-doc,"019");
+@include i-class(edit,"01a");
+@include i-class(lock,"01b");
+@include i-class(unlock,"01c");
+@include i-class(refresh,"01d");
+@include i-class(paper-clip,"01e");
+@include i-class(video,"01f");
+@include i-class(photo,"020");
+@include i-class(graph,"021");
+@include i-class(idea,"022");
+@include i-class(mic,"023");
+@include i-class(cart,"024");
+@include i-class(address-book,"025");
+@include i-class(compass,"026");
+@include i-class(flag,"027");
+@include i-class(location,"028");
+@include i-class(clock,"029");
+@include i-class(folder,"02a");
+@include i-class(inbox,"02b");
+@include i-class(website,"02c");
+@include i-class(smiley,"02d");
+@include i-class(search,"02e");
+
+@font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('../fonts/caviardreams/caviardreams-webfont.eot');
+    src: url('../fonts/caviardreams/caviardreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/caviardreams/caviardreams-webfont.woff') format('woff'),
+         url('../fonts/caviardreams/caviardreams-webfont.ttf') format('truetype'),
+         url('../fonts/caviardreams/caviardreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'caviar_dreamsbold';
+    src: url('../fonts/caviardreams/caviar_dreams_bold-webfont.eot');
+    src: url('../fonts/caviardreams/caviar_dreams_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/caviardreams/caviar_dreams_bold-webfont.woff') format('woff'),
+         url('../fonts/caviardreams/caviar_dreams_bold-webfont.ttf') format('truetype'),
+         url('../fonts/caviardreams/caviar_dreams_bold-webfont.svg#caviar_dreamsbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@-webkit-keyframes greenPulse {
+    from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+    50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+    to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+a:hover.success.button, input:hover.success.button {
+-webkit-animation-name: greenPulse;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes redPulse {
+    from { background-color: #a80000; -webkit-box-shadow: 0 0 9px $alert-color; }
+    50% { background-color: $secondary-color; -webkit-box-shadow: 0 0 18px $alert-color; }
+    to { background-color: #a80000; -webkit-box-shadow: 0 0 9px $alert-color; }
+}
+.switch-nolang input, .switch-nolang > span, .switch-nolang:focus > span, .switch-nolang label {
+-webkit-animation-name: redPulse;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+}
+ #megaDrop, .footer-top {
+     background-image:url('../images/classy_fabric.png');
+     background-repeat:repeat;
+ }
+
+
+footer li,  footer p {
+    font-size: .8em;
+    color: #848484;
+}
+footer a {
+    color: #2E6C7E;
+    font-family: 'caviar_dreamsbold';
+}
+footer p {
+    font-family: 'caviar_dreamsregular';
+}
+
+#map { height: 180px; display: block;}
+
+		.leaflet-control-zoom-fullscreen { background-image: url(icon-fullscreen.png); }
+		/* on selector per rule as explained here : http://www.sitepoint.com/html5-full-screen-api/ */
+		#map:-webkit-full-screen { width: 100% !important; height: 100% !important; }
+		#map:-moz-full-screen { width: 100% !important; height: 100% !important; }
+		#map:full-screen { width: 100% !important; height: 100% !important; }
+        
+#Breadcrumbs {
+    font-family: caviar_dreamsbold;
+    font-size: 12px;
+    display: block;
+    padding: 0.5625em 0.875em 0.5625em;
+    overflow: hidden;
+    margin-top: 10px;
+    list-style: none;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #f6f6f6;
+    border-color: gainsboro;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.sidebar, .main {
+    margin-top:10px;
+}
+
+
+.SitemapPage .SitemapChildren.Root {
+    
+    padding: 30px 0;
+    
+    li {
+        padding: 0 0 0 5px;
+        margin: 0 0 0 20px;
+        list-style-type: disc;
+        font-size: 0.9em;
+    }
+    
+    > li {
+        font-size: 1.4em;
+        padding-bottom: 8px;
+        
+        > a {
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            font-size: 1.0em;
+            white-space: nowrap;
+        }
+    }
+}
+
+ #modal-content{
+     background-color: rgba(16,82,160,0.85);
+     text-shadow: 0 0 30px yellow , 0 0 70px yellow;
+     -webkit-animation-name: greenPulse;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+     
+ }
+ #megaDrop .property a:hover p, #megaDrop .property a:hover h4, #megaDrop .property a:hover h4 span.apps { 
+    color: rgba(16,82,160,0.85);
+    text-shadow: 0 0 30px yellow , 0 0 70px yellow; 
+}
+ 
